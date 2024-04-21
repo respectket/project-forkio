@@ -1,5 +1,4 @@
 node_modules
 .idea
 *.xml
-dist
 .DS_Store
