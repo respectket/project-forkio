@@ -20,7 +20,7 @@ const sass = gulpSass(dartSass);
 
 const html = () => {
     return gulp.src("./src/*.html")
-        .pipe(gulp.dest("./dist"));
+        .pipe(gulp.dest("./docs"));
 }
 
 const css = () => {
@@ -35,7 +35,7 @@ const css = () => {
 
         .pipe(rename("style.min.css"))
 
-        .pipe(gulp.dest("./dist/css"))
+        .pipe(gulp.dest("./docs/css"))
 
         .pipe(browserSync.stream())
 
@@ -52,7 +52,7 @@ const js = () => {
         // }))
         .pipe(minifyjs())
         .pipe(rename("scripts.min.js"))
-        .pipe(gulp.dest("./dist/scripts"))
+        .pipe(gulp.dest("./docs/scripts"))
         .pipe(browserSync.stream())
 
 }
@@ -60,18 +60,18 @@ const js = () => {
 const image = () => {
     return gulp.src("./src/images/**/*.*")
         .pipe(imagemin())
-        .pipe(gulp.dest("./dist/images"));
+        .pipe(gulp.dest("./docs/images"));
 }
 
 const cleanDist = () => {
-    return gulp.src('./dist', {read: false})
+    return gulp.src('./docs', {read: false})
         .pipe(clean());
 }
 
 const server = () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: "./docs"
         }
     });
 }
