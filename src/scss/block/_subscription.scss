@@ -1,0 +1,189 @@
+.pricing {
+    background: url(./../images/pricing/pricing-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: rem(5) 0 rem(12) 0;
+
+    @media (min-width: 641px) {
+        padding: rem(90) 0;
+    }
+    &__title {
+        margin-bottom: rem(32);
+        text-align: center;
+        font-family: $primary-fonts;
+        font-size: rem(28);
+        font-weight: 700;
+        line-height: 150%;
+        text-transform: capitalize;
+        color: #fff;
+
+        @media (min-width: 641px) {
+            font-size: rem(42);
+        }
+
+        @media (min-width: 1145px) {
+            font-size: rem(48);
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: rem(18);
+        @media (min-width: 641px) {
+            gap: rem(30) rem(25);
+        }
+        @media (min-width: 1145px) {
+            flex-direction: row;
+            column-gap: rem(15);
+        }
+    }
+
+    &__first-second {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: rem(18);
+
+        @media (min-width: 641px) {
+            flex-direction: row;
+        }
+    }
+
+    &__third-fourth {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(18);
+        
+        @media (min-width: 641px) {
+            flex-direction: row;
+        }
+    }
+
+    &__card {
+        width: 257px;
+        display: flex;
+        flex-direction: column;
+        &--recommend {
+            width: 299px;
+        }
+
+        &--enterprise {
+            @media (min-width: 641px) {
+                margin-right: 42px;
+            }
+
+            @media (min-width: 1145px) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__name {
+        padding: rem(36) 0;
+        text-align: center;
+        font-family: $primary-fonts;
+        font-size: rem(24);
+        font-weight: 400;
+        line-height: 100%;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: rgba(255, 255, 255, 0.06);
+        &--recommend {
+            background-color: rgba(0, 0, 0, 0.11);
+        }
+    }
+
+    &__card-wrap {
+        flex: 1;
+        padding: rem(30) 0 rem(60) 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.11);
+        &--recommend {
+            background-color: rgba(70, 48, 72, 0.84)
+        }
+    }
+
+    &__price {
+        margin-bottom: rem(20);
+        font-family: $primary-fonts;
+        font-size: rem(60);
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #fff;
+
+        span {
+            font-weight: 700;
+        }
+
+        &--recommend {
+            font-size: rem(82);
+        }
+    }
+
+    &__period {
+        position: relative;
+        padding-bottom: rem(38);
+        margin-bottom: rem(30);
+        font-family: $primary-fonts;
+        font-size: rem(14);
+        font-weight: 400;
+        line-height: 114%;
+        text-transform: uppercase;
+        color: #fff;
+
+        &::after {
+            content: "";
+            width: rem(60);
+            height: rem(5);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            background-color: #8D81AC;
+        }
+    }
+
+    &__license {
+        flex: 1;
+        margin-bottom: rem(37);
+        text-align: center;
+        font-family: $primary-fonts;
+        font-size: rem(16);
+        font-weight: 400;
+        color: #fff;
+
+        p {
+            flex: 1;
+            line-height: 175%;
+        }
+
+        &--recommend {
+            margin-bottom: rem(83);
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        padding: rem(15) rem(37);
+        border-radius: rem(30);
+        background-color: rgba(255, 255, 255, 0.15);
+        font-family: $primary-fonts;
+        font-size: rem(15);
+        font-weight: 400;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #fff;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+    }
+}

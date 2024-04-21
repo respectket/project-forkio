@@ -1,0 +1,44 @@
+@function rem($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return calc($pixels / $context) * 1rem;
+}
+
+// Simple usage FLEXBOX
+@mixin flex($horizontal: center, $vertical: center) {
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
+@mixin title {
+  color: $title-color;
+  font-weight: bold;
+  font-size: rem(16);
+  line-height: rem(22);
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+}
+
+@mixin for-size($size) {
+  @if $size==phone {
+    @media (min-width: 320px) and (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @else if $size==tablet {
+    @media (min-width: 481px) and (max-width: 992px) {
+      @content;
+    }
+  }
+}
+
+
+  

@@ -1,0 +1,127 @@
+.people-background {
+    background-image: url(../images/peoleTalkFork/people-back.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    bottom: -12px;
+}
+
+.people__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6.7em;
+    padding-bottom: 1.8em;
+
+    @include for-size(tablet) {
+        text-align: center;
+    }
+
+    @include for-size(phone) {
+        padding-top: 3.5em;
+    }
+
+    &-title {
+        font-family: $primary-fonts;
+        font-weight: 700;
+        font-size: rem(48);
+        line-height: rem(50);
+        color: $title-color;
+
+        @include for-size(tablet) {
+            text-align: center;
+            font-size: rem(42);
+            line-height: rem(44);
+        }
+
+        @include for-size(phone) {
+            text-align: center;
+            font-size: rem(36);
+            line-height: rem(48);
+        }
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: baseline;
+        row-gap: 7em;
+        column-gap: 6.8em;
+        margin-top: 5.1em;
+
+        @media(min-width: 993px) and (max-width:1199px) {
+            column-gap: 0.8em;
+        }
+
+        @include for-size(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 5em;
+            row-gap: 5.3em;
+        }
+
+        @include for-size(phone) {
+            grid-template-columns: 1fr;
+            column-gap: 0;
+            row-gap: 2.8em;
+            padding-inline: 10px;
+            margin-top: 3.3em;
+        }
+    }
+
+    &-item {
+        text-align: center;
+
+        &-img {
+            padding-bottom: 1.8em;
+        }
+
+        &-text {
+            font-family: $secondary-fonts;
+            font-weight: 700;
+            font-style: italic;
+            font-size: rem(16);
+            line-height: rem(24);
+            color: $secondary-text-color;
+        }
+    }
+
+    &-footer {
+        position: relative;
+        font-family: $secondary-fonts;
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: rem(21);
+        color: #A291A5;
+        max-width: 887px;
+        margin-top: 7.2em;
+        margin-bottom: 0.9em;
+        text-align: center;
+
+        @include for-size(phone) {
+            padding-inline: 1.5em;
+            margin-top: 2.3em;
+            padding-bottom: 1.3em;
+        }
+    }
+
+    &-footer::after {
+        position: absolute;
+        bottom: -1.1em;
+        left: 50%;
+        transform: translate(-50%);
+        content: "";
+        min-width: 780px;
+        height: 2px;
+        border: none;
+        background-color: #645766;
+
+        @include for-size(tablet) {
+            min-width: 480px;
+        }
+
+        @include for-size(phone) {
+            min-width: 245px;
+        }
+    }
+}
